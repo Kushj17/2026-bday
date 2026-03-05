@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>365 Days</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="stars">
+<div class="galaxy"></div>
+<div class="fog"></div>
+
+<div class="content-wrapper">
+
+<audio id="bgMusic" autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+  <h1>365 Days With You</h1>
+
+  <h2 id="hours" class="countdown-big" style="font-size: 2.5rem;">0</h2>
+  <p class="love-text">Hours Together</p>
+
+  <h2>Here's a small recap hehe</h2>
+
+<iframe 
+  id="specialVideo"
+  width="80%"
+  height="420"
+  src="https://www.youtube.com/embed/SgwpyZkmovU?rel=0"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="margin-top:20px;border-radius:15px;border:1px solid rgba(255,255,255,0.2);">
+</iframe>
+
+  <p class="love-text" style="margin-top:20px;">If I could relive one year again… I’d choose this one.</p>
+
+  <button class="btn" onclick="goTo('little.html')">But That's Not Everything</button>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+function animateValue(id, start, end, duration) {
+  if (start === end) return;
+  let current = start;
+  const range = end - start;
+  const increment = end > start ? 1 : -1;
+  const stepTime = Math.max(1, Math.abs(Math.floor(duration / range)));
+  const obj = document.getElementById(id);
+  const timer = setInterval(function() {
+    current += 10; // Stepping faster for larger numbers
+    if (current >= end) {
+        current = end;
+        clearInterval(timer);
+    }
+    obj.innerHTML = current;
+  }, stepTime);
+}
+
+animateValue("days", 0, 365, 2000);
+animateValue("hours", 0, 8760, 2000);
+</script>
+</body>
+</html>

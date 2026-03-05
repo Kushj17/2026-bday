@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="stars">
+<div class="galaxy"></div>
+<div class="fog"></div>
+  <audio id="bgMusic" autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<div class="content-wrapper">
+  <h1>QUIZ TIME</h1>
+  <h2>How Well Do You Know Us?</h2>
+  <h2>Answer all of them correctly to unlock something special</h2>
+
+<div id="quizForm">
+
+<div class="question">
+<p>1. When did you first text me?</p>
+<label><input type="radio" name="q1" value="a"> 17th Oct</label><br>
+<label><input type="radio" name="q1" value="b"> 12th Oct</label><br>
+<label><input type="radio" name="q1" value="c"> 19th Oct</label>
+</div>
+
+<div class="question">
+<p>2. What is my favorite thing about you?</p>
+<label><input type="radio" name="q2" value="a"> Your laugh</label><br>
+<label><input type="radio" name="q2" value="b"> Your smile</label><br>
+<label><input type="radio" name="q2" value="c"> Everything</label>
+</div>
+
+<div class="question">
+<p>3. when did all this start?(text)</p>
+<label><input type="radio" name="q3" value="a"> 10th oct</label><br>
+<label><input type="radio" name="q3" value="b"> 11th Oct</label><br>
+<label><input type="radio" name="q3" value="c"> 8th Oct</label>
+</div>
+
+<div class="question">
+<p>4. when did you finally tell me yes?</p>
+<label><input type="radio" name="q4" value="a"> 17th April</label><br>
+<label><input type="radio" name="q4" value="b"> 19th April</label><br>
+<label><input type="radio" name="q4" value="c"> 21st April</label>
+</div>
+
+<div class="question">
+<p>5. when did we hug for the first time?</p>
+<label><input type="radio" name="q5" value="a"> 17th Oct</label><br>
+<label><input type="radio" name="q5" value="b"> 15th Oct</label><br>
+<label><input type="radio" name="q5" value="c"> 19th Oct</label>
+</div>
+
+<br>
+
+<button type="button" class="btn" onclick="checkQuiz()">Submit Answers</button>
+
+<p id="quizMessage" class="love-text"></p>
+
+<div id="finalAccess" style="display:none;">
+<button class="btn" onclick="goTo('final.html')">One Last Thing For You</button>
+</div>
+
+</div>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

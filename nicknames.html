@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Every Name</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const names = document.querySelectorAll(".names-grid .love-text");
+
+  names.forEach((name, index) => {
+
+    setTimeout(() => {
+      name.style.opacity = "1";
+      name.style.transform = "translateY(0)";
+    }, index * 500);
+
+  });
+
+});
+</script>
+<body class="stars">
+<div class="galaxy"></div>
+<div class="fog"></div>
+  <audio id="bgMusic" autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<div class="content-wrapper">
+  <h1>Every Name I've Called You</h1>
+
+<div class="names-grid">
+
+<p class="love-text">Meri pyaari vanshuu</p>
+<p class="love-text">Meri cuite vanshu</p>
+<p class="love-text">Meri nanhi si vanshu</p>
+<p class="love-text">Meri chotu</p>
+<p class="love-text">Meri jaan</p>
+<p class="love-text">Meri cuite piee</p>
+<p class="love-text">Meri raj dulari</p>
+<p class="love-text">Meri raj kumari</p>
+<p class="love-text">Meri nanhi si jaan</p>
+<p class="love-text">Meri Honey</p>
+<p class="love-text">Meri sweetheart</p>
+<p class="love-text">Meri sweetyy</p>
+<p class="love-text">Meri pookiee</p>
+<p class="love-text">Meri pyaari si bachiii</p>
+<p class="love-text">Meri choti si bachii</p>
+<p class="love-text">Meri ittu si vanshudiii</p>
+<p class="love-text">Meri mini vanshuuu</p>
+<p class="love-text">Meri sundar mahila</p>
+<p class="love-text">Meri hot sexy vanshuuu</p>
+<p class="love-text">Mera pyaar haii</p>
+<p class="love-text">Mera sab kuch</p>
+<p class="love-text">Meri dear</p>
+<p class="love-text">Meri babygirl</p>
+<p class="love-text">Meri honey piee</p>
+<p class="love-text">Meri aishaaaa</p>
+<p class="love-text">Meri spu</p>
+<p class="love-text">Meri nalayakkk</p>
+<p class="love-text">Meri pagludi</p>
+<p class="love-text">Meri gadhuu</p>
+<p class="love-text">Meri princess</p>
+<p class="love-text">Meri queen</p>
+<p class="love-text">Mi ladyyyy</p>
+<p class="love-text">Meri cuite cuite cutieeeee</p>
+<p class="love-text">Meri jaanuuu</p>
+<p class="love-text">Meri rasmalai</p>
+<p class="love-text">Meri vanshudii</p>
+
+</div>
+
+  <button class="btn" onclick="goTo('quiz.html')">Now It's Your Turn</button>
+</div>
+
+
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Before I Wish You</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+
+<body class="stars">
+
+<div class="galaxy"></div>
+<div class="fog"></div>
+  <audio id="bgMusic" autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<div class="content-wrapper">
+  <h1>Before I wish you...</h1>
+
+  <p class="love-text">Before I celebrate your birthday,</p>
+
+  <p class="love-text">I want to celebrate you my sweetheart.❣️</p>
+
+<div class="letter-block fade-lines">
+
+<p>The entire year that is last march til today its been wonderful.</p>
+
+<p>The way you laugh, the way u care, the way u make me smile.</p>
+
+<p>The way you changed me without even trying.</p>
+
+<p>Everything about you is special.</p>
+
+<p>I just wish i was with you right now and i could hug you so tight and wish you a very happy birthday.</p>
+
+<p>I can't wait to celebrate many more birthdays with you.</p>
+
+<p>I want to be there for every laugh, every dream, every little moment life gives you.</p>
+
+<p>This is just the beginning of our story.</p>
+
+<p>I promise to stand by you, protect your heart, and remind you every single day how loved you are.</p>
+
+<p>Thank you for being my peace, my happiness, and the best part of my days.</p>
+
+<p>Loving you feels so natural, so safe, so right.</p>
+
+<p>You've become my comfort, my happiness, my peace.</p>
+
+<p>Sometimes I just sit and think about how lucky I am that I get to call you mine.</p>
+
+</div>
+
+      <p class="signature">
+      Thank you for being you.
+      Thank you for loving me.💗
+    </p>
+</div>
+
+  <button class="btn" onclick="goTo('birthday.html')">There's Something Else Too</button>
+</div>
+
+<script src="js/script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+const lines = document.querySelectorAll(".fade-lines p");
+
+lines.forEach((line,index)=>{
+
+setTimeout(()=>{
+line.style.opacity="1";
+line.style.transform="translateY(0)";
+}, index*1800);
+
+});
+
+});
+</script>
+
+</body>
+</html>

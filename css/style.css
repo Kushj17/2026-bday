@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ================= DARK MYSTERIOUS NIGHT BACKGROUND ================= */
+
+body.stars {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(180, 0, 80, 0.25), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255, 0, 120, 0.15), transparent 50%),
+    linear-gradient(135deg, #0b0012 0%, #1a0025 50%, #2a0033 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  color: #f8e9f3;
+  min-height: 100vh;
+  height: auto;
+  overflow-y: auto;
+  
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 1.2s ease forwards;
+  opacity: 0;
+}
+
+/* Cinematic Vignette */
+body.stars::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, transparent 55%, rgba(0, 0, 0, 0.65) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ================= GLOBAL FADE IN ================= */
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  opacity: 0 !important;
+  transition: opacity 0.4s ease;
+}
+
+/* ================= LOADER ================= */
+
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #000000f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 1.2s ease;
+}
+
+.moon {
+  font-size: 70px;
+  margin-bottom: 20px;
+  animation: float 3s infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.loadtext {
+  font-size: 1.8rem;
+  width: 80%;
+  line-height: 1.6;
+}
+
+/* ================= COUNTDOWN ================= */
+
+.countdown-big {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(255, 120, 200, 0.6);
+}
+
+/* ================= BUTTONS ================= */
+
+.btn {
+  padding: 12px 25px;
+  background: #ff4fa3;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  display: inline-block;
+  transition: .3s ease;
+  z-index: 5;
+  position: relative;
+}
+
+.btn:hover {
+  transform: scale(1.12) translateY(-3px);
+  background: #ff2f92;
+  box-shadow: 0 0 20px rgba(255, 79, 163, 0.6);
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  padding: 40px;
+  max-width: 8000px;
+  width: 100%;
+  min-height:100vh;
+  display:flex;
+   flex-direction:column; 
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+/* ================= TEXT STYLES ================= */
+
+.love-text,
+.letter-text {
+  font-size: 1.3rem;
+  max-width: 850vw;
+  line-height: 1.7;
+  color: #f8e9f3;
+}
+
+/* ================= ATMOSPHERIC GLOW ================= */
+
+.fog {
+  position: fixed;
+  width: 120vw;
+  height: 120vh;
+  top: -10vh;
+  left: -10vw;
+  filter: blur(70px);
+  background: radial-gradient(circle, rgba(255, 0, 100, 0.18), transparent 70%);
+  animation: pulseGlow 8s infinite ease-in-out alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes pulseGlow {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 0.7;
+  }
+}
+
+/* ================= STAR FIELD ================= */
+
+.galaxy {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.05;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ================= FLOATING HEARTS ================= */
+
+
+.heart{
+  position:fixed;
+  bottom:-40px; /* start below screen */
+  width:14px;
+  height:14px;
+  background:#ff4fa3;
+  transform:rotate(45deg);
+  opacity:0.1;
+  animation:floatUp linear infinite;
+  pointer-events:none;
+  z-index:2;
+}
+
+.heart::before,
+.heart::after{
+  content:"";
+  position:absolute;
+  width:14px;
+  height:14px;
+  background:#ff4fa3;
+  border-radius:50%;
+}
+
+.heart::before{
+  top:-7px;
+  left:0;
+}
+
+.heart::after{
+  left:-7px;
+  top:0;
+}
+
+@keyframes floatUp{
+  0%{
+    transform:translateY(0) rotate(45deg);
+    opacity:0;
+  }
+  10%{opacity:0.15;}
+  100%{
+    transform:translateY(-120vh) rotate(45deg);
+    opacity:0;
+  }
+}
+
+/* ================= BALLOONS ================= */
+
+.balloon{
+  position:fixed;
+  bottom:-120px;
+  width:55px;
+  height:75px;
+  border-radius:50% 50% 48% 48%;
+  background:radial-gradient(circle at 30% 30%, #ff8edc, #ff2f92);
+  animation: floatUp 18s linear infinite,
+             sway 4s ease-in-out infinite alternate;
+  opacity:0.8;
+  z-index:0;
+  box-shadow:
+    0 0 20px rgba(255,79,163,0.6),
+    0 0 40px rgba(255,79,163,0.3);
+}
+/* Balloon knot */
+.balloon::before{
+  content:"";
+  position:absolute;
+  bottom:-8px;
+  left:50%;
+  transform:translateX(-50%);
+  width:10px;
+  height:10px;
+  background:#ff2f92;
+  border-radius:2px;
+}
+
+/* Balloon string */
+.balloon::after{
+  content:"";
+  position:absolute;
+  bottom:-80px;   /* attach string BELOW balloon */
+  left:50%;
+  transform:translateX(-50%);
+  width:2px;
+  height:80px;
+  background:rgba(255,200,230,0.4);
+}
+
+/* Floating upward */
+@keyframes floatUp{
+  0%{
+    transform:translateY(0) scale(0.95);
+  }
+  100%{
+    transform:translateY(-120vh) scale(1.05);
+  }
+}
+
+/* Gentle sway */
+@keyframes sway{
+  0%{ margin-left:-10px; }
+  100%{ margin-left:10px; }
+}
+
+/* ===== FALLING PETALS ===== */
+
+.petal{
+  position:fixed;
+  top:-40px;
+  width:18px;
+  height:18px;
+  background:radial-gradient(circle at 30% 30%, #ff7abf, #ff2f92);
+  border-radius:60% 40% 60% 40%;
+  opacity:0.6;
+  animation:petalFall linear infinite;
+  pointer-events:none;
+  z-index:2;
+}
+
+@keyframes petalFall{
+  0%{
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
+  }
+  10%{opacity:0.7;}
+  100%{
+    transform:translateY(110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+/* ===== FLOATING DUST ===== */
+
+.dust{
+  position:fixed;
+  width:5px;
+  height:5px;
+  background:rgba(255,255,255,0.25);
+  border-radius:50%;
+  filter:blur(2px);
+  animation:dustFloat 20s linear infinite;
+  pointer-events:none;
+  z-index:0;
+}
+
+@keyframes dustFloat{
+  0%{ transform:translateY(100vh); }
+  100%{ transform:translateY(-20vh); }
+}
+
+/* ===== BOKEH GLOW ===== */
+
+.bokeh{
+  position:fixed;
+  width:200px;
+  height:200px;
+  background:radial-gradient(circle, rgba(255,79,163,0.25), transparent 70%);
+  border-radius:50%;
+  filter:blur(60px);
+  opacity:0.4;
+  pointer-events:none;
+  z-index:0;
+}
+
+
+/* ===== LETTER STYLING ===== */
+
+.letter {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  line-height: 1.9;
+  color: #f8e9f3;
+  text-align: center;
+}
+
+.letter p {
+  margin-bottom: 22px;
+  opacity: 0.95;
+}
+
+.letter-block {
+  max-width: 850px;
+  margin: 30px auto 0 auto;
+  text-align: center;
+}
+
+.letter-block p {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  margin-bottom: 22px;
+  color: #f8e9f3;
+}
+.letter strong {
+  color: #ff7abf;
+}
+
+.signature {
+  margin-top: 40px;
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: #ff8edc;
+}
+
+/* ================= HEART ================= */
+
+.wish-heart{
+  width:80px;
+  height:80px;
+  background:#ff4fa3;
+  transform:rotate(45deg);
+  margin:30px auto;
+  position:relative;
+  cursor:pointer;
+  transition:0.4s ease;
+  box-shadow:0 0 20px rgba(255,79,163,0.6);
+}
+
+.wish-heart::before,
+.wish-heart::after{
+  content:"";
+  position:absolute;
+  width:80px;
+  height:80px;
+  background:#ff4fa3;
+  border-radius:50%;
+}
+
+.wish-heart::before{
+  top:-40px;
+  left:0;
+}
+
+.wish-heart::after{
+  left:-40px;
+  top:0;
+}
+
+.wish-heart.active{
+  box-shadow:0 0 40px rgba(255,79,163,1);
+  transform:rotate(45deg) scale(1.2);
+}
+
+.hold-text{
+  opacity:0.8;
+  margin-bottom:30px;
+}
+
+/* ================= STARS ================= */
+
+.stars-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  max-width:300px;
+  margin:20px auto;
+}
+
+.star{
+  width:20px;
+  height:20px;
+  background:#555;
+  clip-path:polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.star.active{
+  background:#ffccff;
+  box-shadow:0 0 12px #ffccff;
+}
+
+.question{
+margin:20px 0;
+padding:15px;
+border-radius:10px;
+transition:0.3s;
+}
+
+
+
+.names-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+  margin-top:40px;
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.names-grid .love-text{
+  opacity:0;
+  transform:translateY(15px);
+}
+
+.fade-lines p{
+  opacity:0;
+  transform:translateY(15px);
+  transition:1s ease;
+}

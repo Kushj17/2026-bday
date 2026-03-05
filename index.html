@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Something Special</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="stars">
+
+
+<div class="galaxy"></div>
+<div class="fog"></div>
+  <audio id="bgMusic" autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="content-wrapper">
+  <h1 class="countdown-big" id="countdown"></h1>
+  <p class="love-text">Something special is waiting for you on the most special day of the year.</p>
+  <button class="btn" onclick="startMusic()">Press to start music</button>
+  <button id="openBtn" class="btn" style="display:none;" onclick="goTo('appreciation.html')">Let's Start hehe</button>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+const unlockDate = new Date("March 7, 2026 00:00:00").getTime(); // CHANGE DATE
+const countdownEl = document.getElementById("countdown");
+const btn = document.getElementById("openBtn");
+
+setInterval(function(){
+  const now = new Date().getTime();
+  const distance = unlockDate - now;
+
+  if(distance <= 0){
+    countdownEl.innerHTML = "It's Finally the Time!";
+    btn.style.display = "inline-block";
+    return;
+  }
+
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
+
+  countdownEl.innerHTML = hours + "h " + minutes + "m " + seconds + "s";
+},1000);
+
+// Simple navigation function if js/script.js doesn't have it
+function goTo(page) {
+    window.location.href = page;
+}
+</script>
+</body>
+</html>
